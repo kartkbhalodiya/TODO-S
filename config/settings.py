@@ -27,14 +27,21 @@ SECRET_KEY = os.getenv(
 
 DEBUG = env_bool("DJANGO_DEBUG", default=not env_bool("VERCEL", False))
 
-ALLOWED_HOSTS = env_list(
-    "DJANGO_ALLOWED_HOSTS",
-    ["127.0.0.1", "localhost", "10.0.2.2", ".vercel.app"],
+ALLOWED_HOSTS = sorted(
+    set(
+        env_list("DJANGO_ALLOWED_HOSTS")
+        + ["127.0.0.1", "localhost", "10.0.2.2", ".vercel.app"]
+    )
 )
 if os.getenv("VERCEL_URL"):
     ALLOWED_HOSTS.append(os.environ["VERCEL_URL"])
 
-CSRF_TRUSTED_ORIGINS = env_list("DJANGO_CSRF_TRUSTED_ORIGINS")
+CSRF_TRUSTED_ORIGINS = sorted(
+    set(
+        env_list("DJANGO_CSRF_TRUSTED_ORIGINS")
+        + ["https://*.vercel.app", "https://todo-s-pi.vercel.app"]
+    )
+)
 if os.getenv("VERCEL_URL"):
     CSRF_TRUSTED_ORIGINS.append(f"https://{os.environ['VERCEL_URL']}")
 

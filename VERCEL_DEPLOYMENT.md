@@ -19,8 +19,8 @@ DJANGO_SECRET_KEY
 DJANGO_DEBUG=False
 DATABASE_URL
 DATABASE_SSL_REQUIRE=True
-DJANGO_ALLOWED_HOSTS=.vercel.app,your-project-name.vercel.app
-DJANGO_CSRF_TRUSTED_ORIGINS=https://your-project-name.vercel.app
+DJANGO_ALLOWED_HOSTS=.vercel.app,todo-s-pi.vercel.app
+DJANGO_CSRF_TRUSTED_ORIGINS=https://todo-s-pi.vercel.app
 GOOGLE_OAUTH_CLIENT_ID=782174705998-7l0035suockngjdvbhbue651sv6cemll.apps.googleusercontent.com
 GEMINI_API_KEY
 ```
@@ -63,13 +63,13 @@ vercel --prod
 Health check after deploy:
 
 ```text
-https://your-project-name.vercel.app/api/health/
+https://todo-s-pi.vercel.app/api/health/
 ```
 
 Use this as the app backend URL:
 
 ```text
-https://your-project-name.vercel.app/api
+https://todo-s-pi.vercel.app/api
 ```
 
 ## Known Limit
