@@ -1,11 +1,11 @@
 # Vercel Backend Deployment
 
-This repo root is a Flutter app, so Vercel is configured to deploy only the Django backend.
+This repo is the Django backend prepared for Vercel.
 
 ## Files Used By Vercel
 
 - `vercel.json` routes every request to `api/index.py`.
-- `api/index.py` loads `backend/config/settings.py` and exposes the WSGI app.
+- `api/index.py` loads `config/settings.py` and exposes the WSGI app.
 - `requirements.txt` installs the Django backend dependencies.
 - `.vercelignore` keeps Flutter build/mobile folders out of the deployment upload.
 - `.env.vercel.example` lists the Vercel environment variables.
@@ -48,7 +48,7 @@ After setting `DATABASE_URL`, run migrations against that database:
 ```powershell
 $env:DATABASE_URL="postgresql://USER:PASSWORD@HOST:5432/DBNAME?sslmode=require"
 $env:DJANGO_DEBUG="False"
-python backend\manage.py migrate
+python manage.py migrate
 ```
 
 ## Deploy
