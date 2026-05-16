@@ -6,7 +6,7 @@ This repo root is a Flutter app, so Vercel is configured to deploy only the Djan
 
 - `vercel.json` routes every request to `api/index.py`.
 - `api/index.py` loads `backend/config/settings.py` and exposes the WSGI app.
-- `requirements.txt` installs `backend/requirements.txt`.
+- `requirements.txt` installs the Django backend dependencies.
 - `.vercelignore` keeps Flutter build/mobile folders out of the deployment upload.
 - `.env.vercel.example` lists the Vercel environment variables.
 
